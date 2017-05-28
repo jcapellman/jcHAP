@@ -7,13 +7,29 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:dashboard="using:jcHAP.Controls.Dashboard"
     xmlns:pages="using:jcHAP.ViewModels.Pages"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     mc:Ignorable="d">
-
-    <Page.DataContext>
-        <pages:MainPageViewModel />
-    </Page.DataContext>
     
-    <Grid x:Name="gMain" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        
-    </Grid>
+    <Page.Resources>
+        <DataTemplate x:Key="DefaultTemplate" x:DataType="pages:MenuItem">
+            <Grid Width="240" Height="48">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="48" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <SymbolIcon Grid.Column="0" Symbol="{x:Bind Icon, Mode=OneWay}" Foreground="White" />
+                <TextBlock Grid.Column="1" Text="{x:Bind Name, Mode=OneWay}" FontSize="16" VerticalAlignment="Center" Foreground="White" />
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+
+    <controls:HamburgerMenu ItemsSource="{Binding MenuItems}" OptionsItemsSource="{Binding OptionMenuItems}"
+                                PaneBackground="Black"
+                                Foreground="White"
+                                ItemTemplate="{StaticResource DefaultTemplate}"
+                                ItemClick="HamburgerMenu_OnItemClick"
+                                OptionsItemTemplate="{StaticResource DefaultTemplate}"
+                              >
+        <Frame x:Name="contentFrame"/>
+    </controls:HamburgerMenu>
 </local:BasePage>

@@ -1,5 +1,5 @@
-﻿using Windows.Media.Ocr;
-using Windows.UI.Xaml.Navigation;
+﻿using Windows.UI.Xaml.Controls;
+
 using jcHAP.ViewModels.Pages;
 
 namespace jcHAP.Pages
@@ -13,15 +13,14 @@ namespace jcHAP.Pages
             this.InitializeComponent();
 
             DataContext = new MainPageViewModel();
-        }
-
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-            base.OnNavigatedTo(e);
 
             viewModel.Load();
+        }
 
-            gMain.Children.Add(viewModel.DashboardControl);
+        private void HamburgerMenu_OnItemClick(object sender, ItemClickEventArgs e)
+        {
+            var menuItem = e.ClickedItem as MenuItem;
+            contentFrame.Navigate(menuItem.PageType);
         }
     }
 }
