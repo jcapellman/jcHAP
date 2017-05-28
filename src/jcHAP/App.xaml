@@ -1,0 +1,15 @@
+﻿<Application
+    x:Class="jcHAP.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:jcHAP"
+    RequestedTheme="Light">
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Grid" x:Key="BasePageGrid">
+                <Setter Property="Margin" Value="10,10,10,10" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

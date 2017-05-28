@@ -1,0 +1,42 @@
+﻿<local:BasePage
+    x:Class="jcHAP.Pages.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:jcHAP.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:settings="using:jcHAP.Library.Objects.Settings"
+    xmlns:pages="using:jcHAP.ViewModels.Pages"
+    mc:Ignorable="d">
+    
+    <Page.DataContext>
+        <pages:SettingsViewModel />
+    </Page.DataContext>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Style="{StaticResource BasePageGrid}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="settings" Style="{StaticResource HeaderTextBlockStyle}" />
+
+        <ListView Grid.Row="1" ItemsSource="{Binding Settings}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Row="0" Text="{Binding Label}"  Style="{StaticResource SubheaderTextBlockStyle}" />
+                        <TextBlock Grid.Row="1" Text="{Binding Description}" Style="{StaticResource SubtitleTextBlockStyle}" />
+                        <TextBox Grid.Row="2" Text="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="enter the value" />
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</local:BasePage>

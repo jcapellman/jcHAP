@@ -1,0 +1,23 @@
+﻿<dashboard:BaseDashboardControl
+    x:Class="jcHAP.Controls.Dashboard.TemperatureDashboard"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:jcHAP.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:jcHAP.ViewModels.Controls"
+    xmlns:dashboard="using:jcHAP.Controls.Dashboard"
+    mc:Ignorable="d">
+
+    <UserControl.DataContext>
+        <controls:TemperatureDashboardViewModel />
+    </UserControl.DataContext>
+    
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="{Binding Temperature}" Style="{StaticResource TitleTextBlockStyle}" />
+    </Grid>
+</dashboard:BaseDashboardControl>
