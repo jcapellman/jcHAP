@@ -15,13 +15,13 @@ namespace jcHAP.ViewModels.Pages
             set { _settings = value; OnPropertyChanged(); }
         }
 
-        public void LoadData()
+        public async void LoadData()
         {
             Settings = new ObservableCollection<SettingsListingResponseItem>();
 
             var settingsManager = new SettingsManager();
 
-            Settings = new ObservableCollection<SettingsListingResponseItem>(settingsManager.LoadSettings());
+            Settings = new ObservableCollection<SettingsListingResponseItem>(await settingsManager.LoadSettings());
         }
     }
 }

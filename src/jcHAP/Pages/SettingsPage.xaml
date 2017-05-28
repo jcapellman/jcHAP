@@ -5,14 +5,8 @@
     xmlns:local="using:jcHAP.Pages"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:settings="using:jcHAP.Library.Objects.Settings"
-    xmlns:pages="using:jcHAP.ViewModels.Pages"
     mc:Ignorable="d">
     
-    <Page.DataContext>
-        <pages:SettingsViewModel />
-    </Page.DataContext>
-
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Style="{StaticResource BasePageGrid}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
