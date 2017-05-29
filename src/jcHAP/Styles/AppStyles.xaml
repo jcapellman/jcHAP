@@ -1,0 +1,17 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:jcHAP.Styles">
+
+    <SolidColorBrush Color="Black" x:Key="FontColor" />
+    
+    <Style TargetType="Grid" x:Key="BasePageGrid">
+        <Setter Property="Margin" Value="10,10,10,10" />
+    </Style>
+    
+    <Style TargetType="TextBlock" x:Key="Header">
+        <Setter Property="Foreground" Value="{StaticResource FontColor}" />
+        <Setter Property="Margin" Value="20,20,0,20" />
+        <Setter Property="FontSize" Value="36" />
+    </Style>
+</ResourceDictionary>

@@ -13,7 +13,7 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Text="settings" Style="{StaticResource HeaderTextBlockStyle}" />
+        <TextBlock Grid.Row="0" Text="settings" Style="{StaticResource Header}" />
 
         <ListView Grid.Row="1" ItemsSource="{Binding Settings}">
             <ListView.ItemTemplate>
