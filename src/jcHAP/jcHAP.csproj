@@ -170,6 +170,9 @@
     <PackageReference Include="Microsoft.Toolkit.Uwp.UI.Controls">
       <Version>1.4.1</Version>
     </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>10.0.2</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\jcHAP.Library\jcHAP.Library.csproj">

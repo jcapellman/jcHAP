@@ -1,4 +1,5 @@
 ﻿using System;
+
 namespace jcHAP.ViewModels.Controls
 {
     public class TemperatureDashboardViewModel : BaseControlsViewModel

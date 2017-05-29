@@ -1,6 +1,6 @@
 ﻿namespace jcHAP.Library.DAL.SQLite.Tables
 {
-    public class Settings
+    public class Settings : BaseTable
     {
         public string TitleLabel { get; set; }
 
