@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 
 using jcHAP.Library.DAL.SQLite;
 using jcHAP.Library.DAL.SQLite.Tables;
+using jcHAP.Library.Enums;
 using jcHAP.Library.Objects.Settings;
 
 using Microsoft.EntityFrameworkCore;
@@ -12,6 +13,8 @@ namespace jcHAP.Library.Managers
 {
     public class SettingsManager : BaseManager
     {
+        private const int SETTINGS_COUNT = 2;
+
         private async Task<List<Settings>> InitializeSettingsAsync()
         {
             using (var dbFactory = new SQLiteDAL())
@@ -22,7 +25,15 @@ namespace jcHAP.Library.Managers
                     {
                         TitleLabel = "Wireless Network (SSID)",
                         HelpLabel = "Enter your Wireless Network or SSID",
-                        Value = string.Empty
+                        Value = string.Empty,
+                        SettingsFieldType = FieldType.Text
+                    },
+                    new Settings
+                    {
+                        TitleLabel = "Wireless Network Password",
+                        HelpLabel = "Password for your Wireless Network",
+                        Value = string.Empty,
+                        SettingsFieldType = FieldType.Password
                     }
                 };
 
@@ -38,7 +49,7 @@ namespace jcHAP.Library.Managers
             {
                 var result = await dbFactory.Settings.ToListAsync();
 
-                if (!result.Any())
+                if (!result.Any() || result.Count != SETTINGS_COUNT)
                 {
                     result = await InitializeSettingsAsync();
                 }

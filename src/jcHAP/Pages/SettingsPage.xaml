@@ -15,22 +15,28 @@
 
         <TextBlock Grid.Row="0" Text="settings" Style="{StaticResource Header}" />
 
-        <ListView Grid.Row="1" ItemsSource="{Binding Settings}">
+        <ListView Grid.Row="1" ItemsSource="{Binding Settings}" Style="{StaticResource BaseListView}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Grid>
+                    <Grid Style="{StaticResource ListViewItem}">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
 
-                        <TextBlock Grid.Row="0" Text="{Binding Label}"  Style="{StaticResource SubheaderTextBlockStyle}" />
-                        <TextBlock Grid.Row="1" Text="{Binding Description}" Style="{StaticResource SubtitleTextBlockStyle}" />
+                        <TextBlock Grid.Row="0" Text="{Binding Label}"  Style="{StaticResource SubHeader}" />
+                        <TextBlock Grid.Row="1" Text="{Binding Description}" Style="{StaticResource SubHeaderContext}" />
                         <TextBox Grid.Row="2" Text="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="enter the value" />
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
     </Grid>
+    
+    <Page.BottomAppBar>
+        <CommandBar Style="{StaticResource BaseCommandBar}">
+            <AppBarButton Icon="Save" Label="Save" Style="{StaticResource BaseAppBarButton}" />
+        </CommandBar>
+    </Page.BottomAppBar>
 </local:BasePage>
