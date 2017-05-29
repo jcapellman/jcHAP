@@ -1,4 +1,6 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 
 using jcHAP.Library.Managers;
 using jcHAP.Library.Objects.Settings;
@@ -22,6 +24,13 @@ namespace jcHAP.ViewModels.Pages
             var settingsManager = new SettingsManager();
 
             Settings = new ObservableCollection<SettingsListingResponseItem>(await settingsManager.LoadSettingsAsync());
+        }
+
+        public async Task<bool> SaveAsync()
+        {
+            var settingsManager = new SettingsManager();
+
+            return await settingsManager.SaveSettingsAsync(new List<SettingsListingResponseItem>(Settings));
         }
     }
 }

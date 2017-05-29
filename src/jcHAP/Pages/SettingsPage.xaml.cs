@@ -1,4 +1,5 @@
-﻿using Windows.UI.Xaml.Navigation;
+﻿using Windows.UI.Xaml;
+using Windows.UI.Xaml.Navigation;
 
 using jcHAP.ViewModels.Pages;
 
@@ -20,6 +21,13 @@ namespace jcHAP.Pages
             ViewModel.LoadData();
 
             base.OnNavigatedTo(e);
+        }
+
+        private async void btnSave_OnClick(object sender, RoutedEventArgs e)
+        {
+            var result = await ViewModel.SaveAsync();
+
+            ShowMessage(result ? "Save Successfully" : "Save Failed");
         }
     }
 }

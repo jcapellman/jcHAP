@@ -36,7 +36,7 @@
     
     <Page.BottomAppBar>
         <CommandBar Style="{StaticResource BaseCommandBar}">
-            <AppBarButton Icon="Save" Label="Save" Style="{StaticResource BaseAppBarButton}" />
+            <AppBarButton Icon="Save" Label="Save" Style="{StaticResource BaseAppBarButton}" Click="btnSave_OnClick" />
         </CommandBar>
     </Page.BottomAppBar>
 </local:BasePage>

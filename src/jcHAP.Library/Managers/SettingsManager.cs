@@ -62,5 +62,27 @@ namespace jcHAP.Library.Managers
                 }).ToList();
             }
         }
+
+        public async Task<bool> SaveSettingsAsync(List<SettingsListingResponseItem> settings)
+        {
+            using (var dbFactory = new SQLiteDAL())
+            {
+                foreach (var setting in settings)
+                {
+                    var dbItem = dbFactory.Settings.FirstOrDefault(a => a.TitleLabel == setting.Label);
+
+                    if (dbItem == null)
+                    {
+                        continue;
+                    }
+
+                    dbItem.Value = setting.Value;                    
+                }
+
+                await dbFactory.SaveChangesAsync();
+
+                return true;
+            }
+        }
     }
 }
