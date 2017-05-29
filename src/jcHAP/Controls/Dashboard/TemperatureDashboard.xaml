@@ -18,6 +18,22 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <TextBlock Text="{Binding Temperature}" Style="{StaticResource TitleTextBlockStyle}" />
+        <GridView ItemsSource="{Binding Temperatures}">
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Row="0" Text="{Binding LatestTemperature}" Style="{StaticResource TitleTextBlockStyle}" />
+                        <TextBlock Grid.Row="1" Text="{Binding Location}" Style="{StaticResource HeaderTextBlockStyle}" />
+                        <TextBlock Grid.Row="2" Text="{Binding LastUpdated}" Style="{StaticResource SubtitleTextBlockStyle}" />
+                    </Grid>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
     </Grid>
 </dashboard:BaseDashboardControl>
