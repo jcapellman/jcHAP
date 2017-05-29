@@ -4,23 +4,23 @@ using jcHAP.ViewModels.Pages;
 
 namespace jcHAP.Pages
 {
-    public sealed partial class DashboardPage : BasePage
+    public sealed partial class DashboardPage
     {
-        private DashboardPageViewModel viewModel => (DashboardPageViewModel) DataContext;
+        private DashboardPageViewModel ViewModel => (DashboardPageViewModel) DataContext;
 
         public DashboardPage()
         {
-            this.InitializeComponent();
+            InitializeComponent();
 
             DataContext = new DashboardPageViewModel();
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            viewModel.Load();    
+            ViewModel.Load();    
 
             gMain.Children.Clear();
-            gMain.Children.Add(viewModel.DashboardControl);
+            gMain.Children.Add(ViewModel.DashboardControl);
         }
     }
 }

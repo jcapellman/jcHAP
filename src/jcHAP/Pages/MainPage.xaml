@@ -28,6 +28,7 @@
                                 Foreground="White"
                                 ItemTemplate="{StaticResource DefaultTemplate}"
                                 ItemClick="HamburgerMenu_OnItemClick"
+                                OptionsItemClick="HamburgerMenu_OnItemClick"
                                 OptionsItemTemplate="{StaticResource DefaultTemplate}"
                               >
         <Frame x:Name="contentFrame"/>

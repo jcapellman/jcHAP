@@ -6,6 +6,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 
+using jcHAP.Library.Managers;
 using jcHAP.Pages;
 
 namespace jcHAP
@@ -16,6 +17,8 @@ namespace jcHAP
         {
             InitializeComponent();
             Suspending += OnSuspending;
+
+            new InitManager().InitializePlatform();
         }
 
         protected override void OnLaunched(LaunchActivatedEventArgs e)

@@ -162,6 +162,9 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite">
       <Version>1.1.2</Version>
     </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools">
+      <Version>1.1.1</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>5.3.3</Version>
     </PackageReference>

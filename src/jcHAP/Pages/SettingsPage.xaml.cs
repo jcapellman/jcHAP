@@ -6,16 +6,18 @@ namespace jcHAP.Pages
 {
     public sealed partial class SettingsPage
     {
-        private SettingsViewModel viewModel => (SettingsViewModel) DataContext;
+        private SettingsViewModel ViewModel => (SettingsViewModel) DataContext;
 
         public SettingsPage()
         {
-            this.InitializeComponent();
+            InitializeComponent();
+
+            DataContext = new SettingsViewModel();
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            viewModel.LoadData();
+            ViewModel.LoadData();
 
             base.OnNavigatedTo(e);
         }
