@@ -2,13 +2,15 @@
 
 using jcHAP.Library.DAL.SQLite;
 
+using Newtonsoft.Json;
+
 namespace jcHAP.ViewModels.Controls
 {
-    public class BaseControlsViewModel : BaseViewModel
+    public abstract class BaseControlsViewModel : BaseViewModel
     {
-        private abstract string GetName();
+        protected abstract string GetName();
 
-        private T getData<T>()
+        protected T getData<T>()
         {
             using (var db = new SQLiteDAL())
             {
