@@ -21,7 +21,7 @@ namespace jcHAP.ViewModels.Pages
 
             var settingsManager = new SettingsManager();
 
-            Settings = new ObservableCollection<SettingsListingResponseItem>(await settingsManager.LoadSettings());
+            Settings = new ObservableCollection<SettingsListingResponseItem>(await settingsManager.LoadSettingsAsync());
         }
     }
 }
