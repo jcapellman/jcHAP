@@ -58,7 +58,8 @@ namespace jcHAP.Library.Managers
                 {
                     Description = a.HelpLabel,
                     Label = a.TitleLabel,
-                    Value = a.Value
+                    SettingValue = a.Value,
+                    ID = a.ID
                 }).ToList();
             }
         }
@@ -69,14 +70,14 @@ namespace jcHAP.Library.Managers
             {
                 foreach (var setting in settings)
                 {
-                    var dbItem = dbFactory.Settings.FirstOrDefault(a => a.TitleLabel == setting.Label);
+                    var dbItem = dbFactory.Settings.FirstOrDefault(a => a.ID == setting.ID);
 
                     if (dbItem == null)
                     {
                         continue;
                     }
 
-                    dbItem.Value = setting.Value;                    
+                    dbItem.Value = setting.SettingValue;                    
                 }
 
                 await dbFactory.SaveChangesAsync();
