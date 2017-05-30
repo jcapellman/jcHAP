@@ -1,9 +1,11 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace jcHAP.Library.DAL.SQLite.Tables
 {
     public class BaseTable
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
 
         public DateTime Modified { get; set; }
