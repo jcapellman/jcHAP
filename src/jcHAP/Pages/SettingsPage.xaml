@@ -33,7 +33,7 @@
 
                         <TextBlock Grid.Row="0" Text="{Binding Label}"  Style="{StaticResource SubHeader}" />
                         <TextBlock Grid.Row="1" Text="{Binding Description}" Style="{StaticResource SubHeaderContext}" />
-                        <TextBox Grid.Row="2" Text="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource BaseTextBox}" PlaceholderText="enter the value" />
+                        <TextBox Grid.Row="2" Text="{Binding SettingValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource BaseTextBox}" PlaceholderText="enter the value" />
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
