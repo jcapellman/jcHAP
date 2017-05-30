@@ -41,6 +41,8 @@ namespace jcHAP.Pages
         private void LoadContent(MenuItem menuItem)
         {
             contentFrame.Navigate(menuItem.PageType);
+            
+            hmMain.SelectedIndex = ViewModel.MenuItems.IndexOf(menuItem);
         }
     }
 }

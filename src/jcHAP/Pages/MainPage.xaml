@@ -28,6 +28,7 @@
                                 Foreground="White"
                                 ItemTemplate="{StaticResource DefaultTemplate}"
                                 ItemClick="HamburgerMenu_OnItemClick"
+                                x:Name="hmMain"
                                 OptionsItemClick="HamburgerMenu_OnItemClick"
                                 OptionsItemTemplate="{StaticResource DefaultTemplate}"
                               >
