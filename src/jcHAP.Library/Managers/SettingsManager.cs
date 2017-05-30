@@ -39,6 +39,8 @@ namespace jcHAP.Library.Managers
 
                 await dbFactory.Settings.AddRangeAsync(settings);
 
+                await dbFactory.SaveChangesAsync();
+
                 return settings;
             }
         }
