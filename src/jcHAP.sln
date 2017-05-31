@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.6
+VisualStudioVersion = 15.0.26510.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jcHAP", "jcHAP\jcHAP.csproj", "{932F1FEA-82F0-4875-A5FA-9886B5AC688A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "jcHAP.Library", "jcHAP.Library\jcHAP.Library.csproj", "{37FC23DD-7DAF-453B-B967-88F114882459}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jcHAP.SensorNode", "jcHAP.SensorNode\jcHAP.SensorNode.csproj", "{23B86711-BC6A-425C-AF8E-582313C3CF53}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,26 @@ Global
 		{37FC23DD-7DAF-453B-B967-88F114882459}.Release|x64.Build.0 = Release|Any CPU
 		{37FC23DD-7DAF-453B-B967-88F114882459}.Release|x86.ActiveCfg = Release|Any CPU
 		{37FC23DD-7DAF-453B-B967-88F114882459}.Release|x86.Build.0 = Release|Any CPU
+		{23B86711-BC6A-425C-AF8E-582313C3CF53}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{23B86711-BC6A-425C-AF8E-582313C3CF53}.Debug|ARM.ActiveCfg = Debug|ARM
+		{23B86711-BC6A-425C-AF8E-582313C3CF53}.Debug|ARM.Build.0 = Debug|ARM
+		{23B86711-BC6A-425C-AF8E-582313C3CF53}.Debug|ARM.Deploy.0 = Debug|ARM
+		{23B86711-BC6A-425C-AF8E-582313C3CF53}.Debug|x64.ActiveCfg = Debug|x64
+		{23B86711-BC6A-425C-AF8E-582313C3CF53}.Debug|x64.Build.0 = Debug|x64
+		{23B86711-BC6A-425C-AF8E-582313C3CF53}.Debug|x64.Deploy.0 = Debug|x64
+		{23B86711-BC6A-425C-AF8E-582313C3CF53}.Debug|x86.ActiveCfg = Debug|x86
+		{23B86711-BC6A-425C-AF8E-582313C3CF53}.Debug|x86.Build.0 = Debug|x86
+		{23B86711-BC6A-425C-AF8E-582313C3CF53}.Debug|x86.Deploy.0 = Debug|x86
+		{23B86711-BC6A-425C-AF8E-582313C3CF53}.Release|Any CPU.ActiveCfg = Release|x86
+		{23B86711-BC6A-425C-AF8E-582313C3CF53}.Release|ARM.ActiveCfg = Release|ARM
+		{23B86711-BC6A-425C-AF8E-582313C3CF53}.Release|ARM.Build.0 = Release|ARM
+		{23B86711-BC6A-425C-AF8E-582313C3CF53}.Release|ARM.Deploy.0 = Release|ARM
+		{23B86711-BC6A-425C-AF8E-582313C3CF53}.Release|x64.ActiveCfg = Release|x64
+		{23B86711-BC6A-425C-AF8E-582313C3CF53}.Release|x64.Build.0 = Release|x64
+		{23B86711-BC6A-425C-AF8E-582313C3CF53}.Release|x64.Deploy.0 = Release|x64
+		{23B86711-BC6A-425C-AF8E-582313C3CF53}.Release|x86.ActiveCfg = Release|x86
+		{23B86711-BC6A-425C-AF8E-582313C3CF53}.Release|x86.Build.0 = Release|x86
+		{23B86711-BC6A-425C-AF8E-582313C3CF53}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
