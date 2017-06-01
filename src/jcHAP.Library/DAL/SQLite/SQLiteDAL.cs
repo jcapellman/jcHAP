@@ -11,6 +11,8 @@ namespace jcHAP.Library.DAL.SQLite
 {
     public class SQLiteDAL : DbContext
     {
+        public DbSet<SensorData> SensoeData { get; set; }
+
         public DbSet<Settings> Settings { get; set; }
 
         public DbSet<Dashboard> Dashboard { get; set; }

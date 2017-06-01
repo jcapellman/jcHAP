@@ -9,9 +9,10 @@ using jcHAP.Library.Enums;
 namespace jcHAP.Library.Migrations
 {
     [DbContext(typeof(SQLiteDAL))]
-    partial class SQLiteDALModelSnapshot : ModelSnapshot
+    [Migration("20170601014519_SesnsorData")]
+    partial class SesnsorData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2");

@@ -13,7 +13,9 @@ namespace jcHAP.SensorNode.Sensors
     public class TemperatureSensor : BaseSensor<TemperatureData>
     {
         private I2cDevice _sensor;
-        
+
+        public override string Name() => "TemperatureHumidity";
+
         public override async void Initialize()
         {
             var aqs = I2cDevice.GetDeviceSelector("I2C1");
