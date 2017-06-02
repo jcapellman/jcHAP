@@ -9,9 +9,10 @@ using jcHAP.Library.Enums;
 namespace jcHAP.Library.Migrations
 {
     [DbContext(typeof(SQLiteDAL))]
-    partial class SQLiteDALModelSnapshot : ModelSnapshot
+    [Migration("20170602001044_SensorNode")]
+    partial class SensorNode
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2");
@@ -57,7 +58,7 @@ namespace jcHAP.Library.Migrations
 
                     b.HasIndex("SensorNodeID");
 
-                    b.ToTable("SensorData");
+                    b.ToTable("SensoeData");
                 });
 
             modelBuilder.Entity("jcHAP.Library.DAL.SQLite.Tables.SensorNodes", b =>

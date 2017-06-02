@@ -11,7 +11,9 @@ namespace jcHAP.Library.DAL.SQLite
 {
     public class SQLiteDAL : DbContext
     {
-        public DbSet<SensorData> SensoeData { get; set; }
+        public DbSet<SensorNodes> SensorNodes { get; set; }
+
+        public DbSet<SensorData> SensorData { get; set; }
 
         public DbSet<Settings> Settings { get; set; }
 
@@ -19,9 +21,7 @@ namespace jcHAP.Library.DAL.SQLite
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite($"Data Source={Common.Constants.FILENAME_SQLITE_DB}");
-
-            
+            optionsBuilder.UseSqlite($"Data Source={Common.Constants.FILENAME_SQLITE_DB}");     
         }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
