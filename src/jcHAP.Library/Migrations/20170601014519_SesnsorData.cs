@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace jcHAP.Library.Migrations
@@ -9,7 +8,7 @@ namespace jcHAP.Library.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "SensoeData",
+                name: "SensorData",
                 columns: table => new
                 {
                     ID = table.Column<int>(nullable: false)
@@ -23,14 +22,14 @@ namespace jcHAP.Library.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_SensoeData", x => x.ID);
+                    table.PrimaryKey("PK_SensorData", x => x.ID);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "SensoeData");
+                name: "SensorData");
         }
     }
 }
