@@ -44,4 +44,10 @@
             </ListView.ItemTemplate>
         </ListView>
     </Grid>
+
+    <Page.BottomAppBar>
+        <CommandBar Style="{StaticResource BaseCommandBar}">
+            <AppBarButton Icon="Refresh" Label="Refresh" Style="{StaticResource BaseAppBarButton}"  />
+        </CommandBar>
+    </Page.BottomAppBar>
 </local:BasePage>

@@ -18,8 +18,6 @@ namespace jcHAP.Pages
         protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
             await ViewModel.LoadSensorNodes();
-
-            OnNavigatedTo(e);
         }
     }
 }

@@ -19,7 +19,7 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Text="Temperature Dashboard" Style="{StaticResource Header}" />
+        <TextBlock Grid.Row="0" Text="temperature dashboard" Style="{StaticResource Header}" />
 
         <GridView Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"  ItemsSource="{Binding Temperatures}">
             <GridView.ItemTemplate>
