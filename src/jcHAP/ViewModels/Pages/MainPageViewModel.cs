@@ -36,7 +36,8 @@ namespace jcHAP.ViewModels.Pages
         {
             var menuItems = new List<MenuItem>
             {
-                new MenuItem() {Icon = Symbol.Home, Name = "Home", PageType = typeof(DashboardPage)}
+                new MenuItem() {Icon = Symbol.Home, Name = "Home", PageType = typeof(DashboardPage)},
+                new MenuItem() {Icon = Symbol.Manage, Name = "Sensor Nodes", PageType = typeof(SensorNodesPage)}
             };
             
             MenuItems = menuItems;
