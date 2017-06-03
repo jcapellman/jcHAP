@@ -1,0 +1,47 @@
+﻿<local:BasePage
+    x:Class="jcHAP.Pages.SensorNodesPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:jcHAP.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:pages="using:jcHAP.ViewModels.Pages"
+    mc:Ignorable="d">
+
+    <Page.DataContext>
+        <pages:SensorNodesViewModel />
+    </Page.DataContext>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Style="{StaticResource BasePageGrid}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="sensor nodes" Style="{StaticResource Header}" />
+
+        <ListView Grid.Row="1" ItemsSource="{Binding SensorNodes}" Style="{StaticResource BaseListView}">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                </Style>
+            </ListView.ItemContainerStyle>
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Style="{StaticResource ListViewItem}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Row="0" Text="{Binding Location}"  Style="{StaticResource SubHeader}" />
+                        <ToggleSwitch Grid.Row="1" IsEnabled="{Binding Enabled, Mode=TwoWay}" />
+                        <TextBlock Grid.Row="2" Text="{Binding LastReportedDate}" />
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</local:BasePage>

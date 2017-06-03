@@ -104,6 +104,9 @@
     <Compile Include="Pages\DashboardPage.xaml.cs">
       <DependentUpon>DashboardPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\SensorNodesPage.xaml.cs">
+      <DependentUpon>SensorNodesPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
@@ -118,6 +121,7 @@
     <Compile Include="Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\Pages\SensorNodesViewModel.cs" />
     <Compile Include="ViewModels\Pages\SettingsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -150,6 +154,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SensorNodesPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
