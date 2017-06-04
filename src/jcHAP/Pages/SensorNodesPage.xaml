@@ -12,7 +12,41 @@
         <pages:SensorNodesViewModel />
     </Page.DataContext>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Style="{StaticResource BasePageGrid}">
+    <Page.Resources>
+        <Flyout x:Name="pAddSensor" Placement="Full">
+            <Grid Background="#9e9e9e">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <ProgressRing Grid.Row="0" Grid.RowSpan="3" x:Name="prMain" HorizontalAlignment="Center" VerticalAlignment="Center" IsActive="{Binding ScanningForDevices}" />
+
+                <TextBlock Grid.Row="0" Margin="20,20,20,20" Text="add sensor node" Style="{StaticResource TitleTextBlockStyle}" />
+
+                <ListView Grid.Row="1" ItemsSource="{Binding NetworkDevices}" Style="{StaticResource BaseListView}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}" />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Button Grid.Column="0" Content="Cancel" HorizontalAlignment="Left" Margin="20,0,0,10" Click="btnCancelPopup_Click" />
+                    <Button Grid.Column="1" Content="Add" HorizontalAlignment="Right" Margin="0,0,20,10" />
+                </Grid>
+            </Grid>
+        </Flyout>
+    </Page.Resources>
+    
+    <Grid x:Name="gMain" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Style="{StaticResource BasePageGrid}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
@@ -43,10 +77,13 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+
+      
     </Grid>
 
     <Page.BottomAppBar>
         <CommandBar Style="{StaticResource BaseCommandBar}">
+            <AppBarButton Icon="Add" Label="Add" Style="{StaticResource BaseAppBarButton}" Click="btnAddSensor_Click" />
             <AppBarButton Icon="Refresh" Label="Refresh" Style="{StaticResource BaseAppBarButton}"  />
         </CommandBar>
     </Page.BottomAppBar>
