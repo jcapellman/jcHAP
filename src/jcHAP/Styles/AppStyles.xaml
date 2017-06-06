@@ -50,4 +50,8 @@
         <Setter Property="Margin" Value="0,0,0,0" />
         <Setter Property="Width" Value="300" />
     </Style>
+
+    <Style TargetType="Grid" x:Key="BasePopupGrid">
+        <Setter Property="Background" Value="White" />
+    </Style>
 </ResourceDictionary>
