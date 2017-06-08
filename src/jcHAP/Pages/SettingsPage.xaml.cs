@@ -23,6 +23,13 @@ namespace jcHAP.Pages
             base.OnNavigatedTo(e);
         }
 
+        private async void btnWifi_OnClick(object sender, RoutedEventArgs e)
+        {
+            var result = await ViewModel.LoadWirelessNetworks();
+
+            ShowMessage(result ? "WiFi Networks Loaded" : "Error loading WiFi Networks");
+        }
+
         private async void btnSave_OnClick(object sender, RoutedEventArgs e)
         {
             var result = await ViewModel.SaveAsync();

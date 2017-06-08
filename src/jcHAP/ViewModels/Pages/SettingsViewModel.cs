@@ -45,14 +45,14 @@ namespace jcHAP.ViewModels.Pages
             return await settingsManager.SaveSettingsAsync(new List<SettingsListingResponseItem>(Settings));
         }
 
-        private async void LoadWirelessNetworks()
+        public async Task<bool> LoadWirelessNetworks()
         {
             var access = await WiFiAdapter.RequestAccessAsync();
 
             // No Access - short circuit
             if (access != WiFiAccessStatus.Allowed)
             {
-                return;
+                return false;
             }
 
             var result = await Windows.Devices.Enumeration.DeviceInformation.FindAllAsync(WiFiAdapter.GetDeviceSelector());
@@ -60,7 +60,7 @@ namespace jcHAP.ViewModels.Pages
             // No WiFi Card - short circuit
             if (!result.Any())
             {
-                return;
+                return false;
             }
 
             var wiFiAdapter = await WiFiAdapter.FromIdAsync(result[0].Id);
@@ -68,6 +68,8 @@ namespace jcHAP.ViewModels.Pages
             wiFiAdapter.AvailableNetworksChanged += wifiAdapter_AvailableNetworksChanged;
 
             await wiFiAdapter.ScanAsync();
+
+            return true;
         }
 
         private void wifiAdapter_AvailableNetworksChanged(WiFiAdapter sender, object args)

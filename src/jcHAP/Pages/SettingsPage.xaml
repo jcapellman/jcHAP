@@ -42,6 +42,7 @@
     
     <Page.BottomAppBar>
         <CommandBar Style="{StaticResource BaseCommandBar}">
+            <AppBarButton Icon="FourBars" Label="WiFi" Style="{StaticResource BaseAppBarButton}" Click="btnWifi_OnClick" />
             <AppBarButton Icon="Save" Label="Save" Style="{StaticResource BaseAppBarButton}" Click="btnSave_OnClick" />
         </CommandBar>
     </Page.BottomAppBar>
