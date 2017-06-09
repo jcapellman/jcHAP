@@ -25,6 +25,8 @@ namespace jcHAP.Pages
 
         private async void btnWifi_OnClick(object sender, RoutedEventArgs e)
         {
+            pWiFi.ShowAt(gMain);
+
             var result = await ViewModel.LoadWirelessNetworks();
 
             ShowMessage(result ? "WiFi Networks Loaded" : "Error loading WiFi Networks");
@@ -35,6 +37,11 @@ namespace jcHAP.Pages
             var result = await ViewModel.SaveAsync();
 
             ShowMessage(result ? "Save Successfully" : "Save Failed");
+        }
+        
+        private void btnCancelPopup_Click(object sender, RoutedEventArgs e)
+        {
+            pWiFi.Hide();
         }
     }
 }
